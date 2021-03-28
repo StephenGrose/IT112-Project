@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if gamereviews %}
+<h2>{{gamereviews.0.game}}</h2>
+<hr>
+{% else %}
+<h3>There are no review for the selected game.</h3>
+{% endif %}
+
+{% for Review in gamereviews %}
+
+<h4> {{Review.reviewTitle}}</h4>
+<table class="table">
+    <tr>
+        <td colspan="3" style="background-color:lightgray;"">{{ Review.reviewBody }}</td>
+    </tr>
+    <tr>
+        <td>{{ Review.reviewRating }} out of 5.</td>
+        <td>By: {{ Review.userID }}</td>
+        <td>Date: {{ Review.reviewDate }}</td>
+    </tr>
+</table>
+<hr>
+{% endfor %}
+
+{% endblock %}

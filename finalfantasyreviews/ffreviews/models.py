@@ -17,6 +17,7 @@ class ffGame(models.Model):
 
 class ffReview(models.Model):
     reviewTitle=models.CharField(max_length=255)
+    game=models.ForeignKey(ffGame,on_delete=models.CASCADE)
     reviewDate=models.DateField()
     reviewBody=models.TextField()
     reviewRating=models.PositiveIntegerField(default=3,validators=[MinValueValidator(1),MaxValueValidator(5)])

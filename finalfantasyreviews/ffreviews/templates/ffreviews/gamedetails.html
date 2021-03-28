@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>{{game.gameTitle}}</h2>
+<h2><a href="{% url 'gamereviews' game_id=game.id %}">{{game.gameTitle}}</a></h2>
+<p><i>Get reviews by clicking the game title above.</i></p>
 <p><b>Release Date:</b> {{game.gameReleaseDate}}</p>
 <p><b>Release Platform(s):</b> {{game.gameReleasePlatform}}</p>
 <p><b>Game Summary:</b></p>
